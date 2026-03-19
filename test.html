@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Dashboard</title>
+
+  <style>
+    :root {
+      --primary: #ff4fa3;
+      --secondary: #d63384;
+      --bg: #f8f0f5;
+      --card: #ffffff;
+      --text: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      background: var(--secondary);
+      padding: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      width: 100%;
+      max-width: 600px;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 0.8rem;
+      color: var(--secondary);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+      background: var(--secondary);
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🏋️ Fitness Dashboard</h1>
+    <p>Dein Trainings- & Ernährungsplan</p>
+  </header>
+
+  <nav>
+    <a href="#profil">👤 Profil</a>
+    <a href="#training">🏃 Training</a>
+    <a href="#ernaehrung">🍎 Ernährung</a>
+    <a href="#fortschritt">📊 Fortschritt</a>
+  </nav>
+
+  <main>
+
+    <section id="profil" class="card">
+      <h2>👤 Profil</h2>
+      <p><strong>Name:</strong> Max Mustermann</p>
+      <p><strong>Alter:</strong> 25</p>
+      <p><strong>Ziel:</strong> Muskelaufbau</p>
+      <p><strong>Level:</strong> Anfänger</p>
+    </section>
+
+    <section id="training" class="card">
+      <h2>🏃 Trainingsplan</h2>
+      <ul>
+        <li>🏋️ Bankdrücken – 3x10</li>
+        <li>🦵 Kniebeugen – 4x8</li>
+        <li>💪 Klimmzüge – 3x max</li>
+        <li>🧘 Plank – 3x60s</li>
+      </ul>
+    </section>
+
+    <section id="ernaehrung" class="card">
+      <h2>🍎 Ernährung</h2>
+      <ul>
+        <li>🌅 Frühstück: Haferflocken + Obst</li>
+        <li>🍗 Mittag: Reis + Hähnchen</li>
+        <li>🥗 Abend: Gemüse + Eiweiß</li>
+      </ul>
+    </section>
+
+    <section id="fortschritt" class="card">
+      <h2>📊 Fortschritt</h2>
+      <p><strong>⚖️ Gewicht:</strong> 75 kg</p>
+      <p><strong>🔥 Körperfett:</strong> 18%</p>
+      <p><strong>🎯 Ziel:</strong> 15%</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Fitness Dashboard (statische Demo-Seite)</p>
+  </footer>
+
+</body>
+</html>
