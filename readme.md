@@ -1,7 +1,7 @@
 #Projekt
 
 ##Idee
-Meine Ideeeeee
+Meine Idee
 
 
 ##Umsetzung
