@@ -1,4 +1,87 @@
- p {
-     background: blue;
-        color: red;
- }
+:root {
+  --primary: #ff4fa3;
+  --secondary: #d63384;
+  --bg: #f8f0f5;
+  --card: #ffffff;
+  --text: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--secondary);
+  padding: 0.8rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 0.8rem;
+  color: var(--secondary);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: var(--secondary);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+}
