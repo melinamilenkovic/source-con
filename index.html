@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -6,12 +7,13 @@
   <title>Fitness Dashboard</title>
 
   <!-- Verlinkung zur CSS Datei -->
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <header>
-    <h1>🏋️ Fitness Dashboard</h1>
+    <h1>🏋️ Fitly</h1>
     <p>Dein Trainings- & Ernährungsplan</p>
   </header>
 
@@ -24,45 +26,89 @@
 
   <main>
 
-    <section id="profil" class="card">
-      <h2>👤 Profil</h2>
-      <p><strong>Name:</strong> Melina Milenkovic-Stehle</p>
-      <p><strong>Alter:</strong> 20</p>
-      <p><strong>Ziel:</strong> Muskelaufbau</p>
-      <p><strong>Level:</strong> Anfänger</p>
-    </section>
 
-    <section id="training" class="card">
-      <h2>🏃 Trainingsplan</h2>
-      <ul>
-        <li>🏋️ Squats – 3x10</li>
-        <li>🦵 Hipthrust – 3x8</li>
-        <li>💪 Latziehen – 3x8</li>
-        <li>🧘 Plank – 3x20s</li>
-      </ul>
-    </section>
+<section id="profil" class="card">
+  <h2>👤 Profil</h2>
+  <p><strong>Name:</strong> <span>Melina Milenkovic-Stehle</span></p>
+  <p><strong>Alter:</strong> <span>20</span></p>
+  <p><strong>Ziel:</strong> <span>Muskelaufbau</span></p>
+  <p><strong>Level:</strong> <span>Anfänger</span></p>
 
-    <section id="ernaehrung" class="card">
-      <h2>🍎 Ernährung</h2>
-      <ul>
-        <li>🌅 Frühstück: Haferflocken + Obst</li>
-        <li>🍗 Mittag: Reis + Hähnchen</li>
-        <li>🥗 Abend: Gemüse + Eiweiß</li>
-      </ul>
-    </section>
+  <button onclick="editSection(this)">Bearbeiten</button>
+  <button onclick="deleteSection(this)">Löschen</button>
+</section>
 
-    <section id="fortschritt" class="card">
-      <h2>📊 Fortschritt</h2>
-      <p><strong>⚖️ Gewicht:</strong> 52 kg</p>
-      <p><strong>🔥 Körperfett:</strong> 20%</p>
-      <p><strong>🎯 Ziel:</strong> 18%</p>
-    </section>
+<section id="training" class="card">
+  <h2>🏃 Trainingsplan</h2>
+  <ul>
+    <li>🏋️ Squats – 3x10</li>
+    <li>🦵 Hipthrust – 3x8</li>
+    <li>💪 Latziehen – 3x8</li>
+    <li>🧘 Plank – 3x20s</li>
+  </ul>
+
+  <button onclick="editList(this)">Bearbeiten</button>
+  <button onclick="deleteSection(this)">Löschen</button>
+</section>
+
+<section id="ernaehrung" class="card">
+  <h2>🍎 Ernährung</h2>
+  <ul>
+    <li>🌅 Frühstück: Haferflocken + Obst</li>
+    <li>🍗 Mittag: Reis + Hähnchen</li>
+    <li>🥗 Abend: Gemüse + Eiweiß</li>
+  </ul>
+
+  <button onclick="editList(this)">Bearbeiten</button>
+  <button onclick="deleteSection(this)">Löschen</button>
+</section>
+
+<section id="fortschritt" class="card">
+  <h2>📊 Fortschritt</h2>
+  <p><strong>⚖️ Gewicht:</strong> <span>52 kg</span></p>
+  <p><strong>🔥 Körperfett:</strong> <span>20%</span></p>
+  <p><strong>🎯 Ziel:</strong> <span>18%</span></p>
+
+  <button onclick="editSection(this)">Bearbeiten</button>
+  <button onclick="deleteSection(this)">Löschen</button>
+</section>
+```
 
   </main>
 
   <footer>
     <p>© 2026 Fitness Dashboard (statische Demo-Seite)</p>
   </footer>
+
+  <script>
+    function deleteSection(button) {
+      button.parentElement.remove();
+    }
+
+    function editSection(button) {
+      let section = button.parentElement;
+      let spans = section.querySelectorAll("span");
+
+      spans.forEach(span => {
+        let neuerWert = prompt("Neuer Wert:", span.textContent);
+        if (neuerWert !== null) {
+          span.textContent = neuerWert;
+        }
+      });
+    }
+
+    function editList(button) {
+      let section = button.parentElement;
+      let items = section.querySelectorAll("li");
+
+      items.forEach(li => {
+        let neuerText = prompt("Neuer Eintrag:", li.textContent);
+        if (neuerText !== null) {
+          li.textContent = neuerText;
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
